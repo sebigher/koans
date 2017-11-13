@@ -1,7 +1,11 @@
 package org.nowhere.abc;
 
+import org.nowhere.chap1.Person;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
 
@@ -20,6 +24,21 @@ public class Main {
      ints.add(1);ints.add(5);
      System.out.println(ints); //[1, 5]
 
+     System.out.println(valueOf(4 <= 5));
+     System.out.println(valueOf(3 > 9));
 
+     Person john = new Person("John");
+
+     Map<String, Person> mapper = new HashMap<>();
+     mapper.putIfAbsent("a", john);
+     mapper.putIfAbsent("a", new Person("Johnny"));
+     mapper.putIfAbsent("b", john);
+     System.out.println(mapper);
     }
+
+    //translating
+    public static Boolean valueOf(boolean boo){
+        return boo ? Boolean.TRUE : Boolean.FALSE;
+    }
+
 }
