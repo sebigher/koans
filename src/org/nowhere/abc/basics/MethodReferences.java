@@ -1,6 +1,9 @@
 package org.nowhere.abc.basics;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MethodReferences {
@@ -32,6 +35,20 @@ public class MethodReferences {
                 .sorted()
                 .forEach( System.out::println);
 
+
+        ////////////////////////////
+        List<String> strings =
+                Arrays.asList("this", "is", "a", "list", "of", "strings");
+        List<String> sorted = strings.stream()
+                .sorted((s1, s2) -> s1.compareTo(s2))
+                .collect(Collectors.toList());
+
+
+        List<String> string =
+                Arrays.asList("this", "is", "a", "list", "of", "strings");
+        List<String> sorted2 = strings.stream()
+                .sorted(String::compareTo)
+                .collect(Collectors.toList());
 
 
 
