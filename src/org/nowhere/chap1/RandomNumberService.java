@@ -75,24 +75,6 @@ public class RandomNumberService {
 
     }
 
-    public static List<Integer> getRandomNumbers2(Integer lottery) {
-        List<Integer> numbers = new ArrayList<>();
-        switch (lottery) {
-            case 45:
-                numbers = generateListofNumbers(lottery, 5);
-                break;
-            case 49:
-                numbers = generateListofNumbers(lottery, 6);
-                break;
-            default:
-                break;
-        }
-        return numbers;
-
-    }
-
-
-
 
     private static void generateAndPrintNumbers(int lottery, int draw) {
         for (int i = 1; i <= draw; i++) {
@@ -109,7 +91,7 @@ public class RandomNumberService {
         return numbers;
     }
 
-    private static List<Integer> generateListofNumbers(int lottery, int draw){
+    private static List<Integer> generateListOfNumbers(int lottery, int draw){
         List<Integer> numbers = new ArrayList<>();
         for (int i = 0; i < draw; i++) {
             numbers.add(getRandomNumberCorrect(lottery));
