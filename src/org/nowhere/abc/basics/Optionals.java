@@ -1,7 +1,6 @@
-package org.nowhere.chap1;
+package org.nowhere.abc.basics;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Optionals {
 

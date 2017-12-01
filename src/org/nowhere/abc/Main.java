@@ -1,6 +1,6 @@
 package org.nowhere.abc;
 
-import org.nowhere.chap1.Person;
+import org.nowhere.abc.basics.Person;
 
 import java.util.ArrayList;
 import java.util.HashMap;

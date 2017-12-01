@@ -1,4 +1,4 @@
-package org.nowhere.chap1;
+package org.nowhere.abc.basics;
 
 public class Person {
     private String name;
