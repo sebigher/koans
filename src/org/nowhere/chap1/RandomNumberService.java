@@ -23,7 +23,6 @@ public class RandomNumberService {
         do {
             number = new Random().nextInt(lottery);
         } while (number == 0); //as long as
-        System.out.println("candidate number: " + number);
         return number;
     }
 
@@ -41,12 +40,36 @@ public class RandomNumberService {
 
     }
 
+
+    public static void getRandomNumbers(Integer lottery) {
+        switch (lottery) {
+            case 45:
+                OutputService.printNumbers(generateNumbers(lottery, 5));
+                break;
+            case 49:
+                OutputService.printNumbers(generateNumbers(lottery, 6));
+                break;
+            default:
+                break;
+        }
+
+    }
+
     private static void generateAndPrintNumbers(int lottery, int draw) {
         for (int i = 1; i <= draw; i++) {
             System.out.print("#" + i + " ");
             getRandomNumberCorrect(lottery);
         }
     }
+
+    private static int[] generateNumbers(int lottery, int draw) {
+        int[] numbers = new int[draw];
+        for (int i = 0; i < draw; i++) {
+            numbers[i] = getRandomNumberCorrect(lottery);
+        }
+        return numbers;
+    }
+
 
 
 }
