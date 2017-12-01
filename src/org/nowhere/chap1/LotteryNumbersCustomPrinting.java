@@ -7,6 +7,6 @@ public class LotteryNumbersCustomPrinting {
         Scanner in = new Scanner(System.in); //attaching the Scanner object to the input
         System.out.println("Let's generate lotto numbers for what lottery(45, 49)");
 
-        RandomNumberService.getRandomNumbers(in.nextInt());
+        RandomNumberService.getRandomNumbersAndOutput(in.nextInt());
     }
 }

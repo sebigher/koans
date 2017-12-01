@@ -40,8 +40,8 @@ public class RandomNumberService {
 
     }
 
-
-    public static void getRandomNumbers(Integer lottery) {
+    //still doing 2 things: generating and printing
+    public static void getRandomNumbersAndOutput(Integer lottery) {
         switch (lottery) {
             case 45:
                 OutputService.printNumbers(generateNumbers(lottery, 5));
@@ -69,6 +69,9 @@ public class RandomNumberService {
         }
         return numbers;
     }
+
+
+
 
 
 
