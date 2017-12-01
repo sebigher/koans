@@ -9,6 +9,6 @@ public class LotteryNumberRunAll {
         System.out.println("Let's generate lotto numbers for what lottery(45, 49)");
         Integer lottery = in.nextInt();
 
-       RandomNumberService.getRdndomNumbersForLottery(lottery);
+       RandomNumberService.getRandomNumbersForLottery(lottery);
     }
 }

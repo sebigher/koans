@@ -27,7 +27,7 @@ public class RandomNumberService {
         return number;
     }
 
-    public static void getRdndomNumbersForLottery(Integer lottery) {
+    public static void getRandomNumbersForLottery(Integer lottery) {
         switch (lottery) {
             case 45:
                 generateAndPrintNumbers(lottery, 5);
