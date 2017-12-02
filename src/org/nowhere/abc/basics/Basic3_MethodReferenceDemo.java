@@ -3,6 +3,7 @@ package org.nowhere.abc.basics;
 import java.util.Arrays;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Basic3_MethodReferenceDemo {
@@ -33,9 +34,7 @@ public class Basic3_MethodReferenceDemo {
         Consumer<Integer> integerConsumer1 = System.out::print;
         Stream.of(numbers).forEach(integerConsumer1);
 
-
         //Class::staticMethod
-
 
         //object::staticMethod
         Consumer<String> stringConsumer = String::length;
@@ -47,6 +46,27 @@ public class Basic3_MethodReferenceDemo {
         Stream.generate(Math::random)
         .limit(6)
         .forEach(System.out::println);
+
+
+        //there is always a context for lambda expressions
+        //this context is responsable in suppying arguments
+
+
+        //Comparator
+        String[] strings = {"You", "complete", "me"};
+        Stream<String> stringStream = Stream.of(strings);
+        stringStream.sorted((s1, s2) ->
+         s1.compareTo(s2)
+        ).collect(Collectors.toList());
+
+        Stream<String> stringStream2 = Stream.of(strings);
+        stringStream2.sorted(String::compareTo)
+                .collect(Collectors.toList());
+
+
+
+
+
 
 
 
