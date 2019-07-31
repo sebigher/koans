@@ -28,7 +28,8 @@ public class Basic1_RunnableDemo {
     public static void main(String[] args) {
         //start a thread and run on Runnable object: object of anonymous class
         //implementing Runnable interface --> method run() on some logic
-        System.out.println(Thread.currentThread().getName()); //main
+        System.out.println(Thread.currentThread().getName()); //main thread
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -42,7 +43,7 @@ public class Basic1_RunnableDemo {
         ).start(); //Thread-1
 
         //assigning lambda expression to variable
-        Runnable runnable = () -> System.out.println(Thread.currentThread().getName());
+        Runnable runnable = () -> System.out.println(Thread.currentThread().getName()); //Thread2
         new Thread(runnable).start();
     }
 
