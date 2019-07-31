@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2d69228-5d05-423c-9014-45d2ae4f9bea" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic2_DirectoryListDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic2_DirectoryListDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic3_MethodReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic3_MethodReferenceDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic4_ConstructorReferenceDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/nowhere/abc/basics/Basic4_ConstructorReferenceDemo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -408,7 +407,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Basic3_MethodReferenceDemo">
+  <component name="RunManager" selected="Application.Basic4_ConstructorReferenceDemo">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -454,6 +453,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Basic4_ConstructorReferenceDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.nowhere.abc.basics.Basic4_ConstructorReferenceDemo" />
+      <module name="koans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.nowhere.abc.basics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -483,9 +495,11 @@
       <item itemvalue="Application.Basic1_RunnableDemo" />
       <item itemvalue="Application.Basic2_DirectoryListDemo" />
       <item itemvalue="Application.Basic3_MethodReferenceDemo" />
+      <item itemvalue="Application.Basic4_ConstructorReferenceDemo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Basic4_ConstructorReferenceDemo" />
         <item itemvalue="Application.Basic3_MethodReferenceDemo" />
         <item itemvalue="Application.Basic2_DirectoryListDemo" />
         <item itemvalue="Application.Basic1_RunnableDemo" />
@@ -523,7 +537,7 @@
       <workItem from="1564596372912" duration="1757000" />
       <workItem from="1564598169241" duration="49000" />
       <workItem from="1564598239390" duration="71000" />
-      <workItem from="1564598336496" duration="35000" />
+      <workItem from="1564598336496" duration="1249000" />
     </task>
     <servers />
   </component>

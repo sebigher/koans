@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Basic4_ConstructorReferenceDemo {
+
   public static void main(String ...args){
     //we have a list of names
     //we want to build a list of Person objects
@@ -18,7 +19,8 @@ public class Basic4_ConstructorReferenceDemo {
     Stream<String> namesStream = Stream.of(namesStrings);
     Stream<String> stringStream = Arrays.stream(namesStrings);
 
-    List<String> namesList = Stream.of(namesStrings).collect(Collectors.toList());
+    List<String> namesList = Stream.of(namesStrings)
+        .collect(Collectors.toList());
     System.out.println(namesList);
 
       List<String> namesList2 = namesStream.collect(Collectors.toList());
@@ -29,33 +31,31 @@ public class Basic4_ConstructorReferenceDemo {
       System.out.println(namesList3);
 
 
-    // [] ============> List<>
+    // [] ============> List<>   directly, without using streams
     List<String> stringList = Arrays.asList(namesStrings);
     System.out.println(stringList);
 
 
-    //1.THNQ
+    //1.GOAL
     List<Person> persons = stringList.stream()
                            .map(name -> new Person(name))
                            .collect(Collectors.toList());
 
     System.out.println(persons);
 
-    //2.THNQ
+    //2.GOAL
     //even if it has a default constructor
-    // the context dictates on what constructor to call
+    // the CONTEXT DICTATES on what constructor to call
     List<Person> personList = stringList.stream()
                             .map(Person::new)
                             .collect(Collectors.toList());
     System.out.println(personList);
 
 
-
-
      Person person1 = new Person("George Tush");
      Person person2 = new Person("Donald Bump");
 
-     //THNQ create a stream from an object
+     //GOAL: create a stream from an object
      List<Person> personList1 = Stream.of(person1)
              .collect(Collectors.toList());
 
@@ -82,19 +82,18 @@ public class Basic4_ConstructorReferenceDemo {
 
       //varargs constructor
       //we need o varargs constructor for Person
-
      List<Person> personas =  namesList.stream()   //stream of strings
       .map(name -> name.split(" "))//map to a stream of string arrays
       .map(Person::new) // map to a stream of Person: context is different !!!
       .collect(Collectors.toList()); //just collect
 
       //do you want an array instead of list?
+      //construct an array of Person
       Person[] people  = namesList.stream()
               .map(Person::new)
               .toArray(Person[]::new);
 
-      for(Person p: people)
-      System.out.println(p);
+      for(Person p: people) System.out.println(p);
 
   }
 
