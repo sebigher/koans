@@ -10,6 +10,7 @@ public class Basic2_DirectoryListDemo {
 
         //list the content & do some filtering
         String[] fileList = directory.list();
+        System.out.println(fileList); //garbage printing
         printArray(fileList);
 
         System.out.println("==========filtering with anonymous class========");
@@ -26,7 +27,7 @@ public class Basic2_DirectoryListDemo {
         System.out.println("==========filtering with lambda========");
         //2. lambda expression
         fileListDemo = directory.list((dir, name) ->
-                name.contains("Demo") );
+               name.contains("Demo") ); //expression lambda: no return
         printArray(fileListDemo);
 
         //2.1 explicit parameters types -> all or nothing
@@ -38,7 +39,7 @@ public class Basic2_DirectoryListDemo {
         fileListDemo = directory.list(
                 (File dir, String name) ->{
                  return name.contains("Demo");
-                }
+                } //statement lambda
         );
         printArray(fileListDemo);
 

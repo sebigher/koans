@@ -1,19 +1,25 @@
 package org.nowhere.abc.basics;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Basic3_MethodReferenceDemo {
     public static void main(String ...kuku) {
-        //THNK: make a stream out of an array
+
+        //GOAL: make a stream out of an array
+
         //it will not work with primitives types !!!
         //remember, autoboxing is not working directly on the array reference!
         //1. first way
         Integer[] numbers = {3, 7, 9, 3, 6, 0};
         Stream<Integer> integerStream = Arrays.stream(numbers);
+
+        int[] primitives = {2, 5}; IntStream streamInts = Arrays.stream(primitives);
 
         //second way
         Stream<Integer> integerStream1 = Stream.of(3, 7, 8, 9, 2);
@@ -27,7 +33,6 @@ public class Basic3_MethodReferenceDemo {
         printer(numbers);
 
         //using methof reference
-
         Stream.of(numbers).forEach(System.out::println);
 
         //object::instanceMethod
@@ -43,31 +48,28 @@ public class Basic3_MethodReferenceDemo {
         Supplier<Double> supplier = Math::random;
 
         System.out.println();
-        Stream.generate(Math::random)
+        Stream.generate(Math::random)  //supplier : some object to get from
         .limit(6)
-        .forEach(System.out::println);
+        .forEach(System.out::println); // consumer:some object to accept/consume
 
 
         //there is always a context for lambda expressions
-        //this context is responsable in suppying arguments
+        //this context is responsible in supplying arguments
 
 
         //Comparator
         String[] strings = {"You", "complete", "me"};
         Stream<String> stringStream = Stream.of(strings);
-        stringStream.sorted((s1, s2) ->
-         s1.compareTo(s2)
-        ).collect(Collectors.toList());
+        List<String>stringList =  stringStream
+            .sorted((s1, s2) -> s1.compareTo(s2))
+            .collect(Collectors.toList());
+        System.out.println(stringList);
 
         Stream<String> stringStream2 = Stream.of(strings);
-        stringStream2.sorted(String::compareTo)
-                .collect(Collectors.toList());
-
-
-
-
-
-
+        List<String> stringList1 = stringStream2
+            .sorted(String::compareTo)
+            .collect(Collectors.toList());
+        System.out.println(stringList1);
 
 
     }
@@ -78,9 +80,7 @@ public class Basic3_MethodReferenceDemo {
           Arrays.stream(numbers).forEach(x ->
             System.out.print(" " + x)
         );
-
     }
-
 }
 
 /**
